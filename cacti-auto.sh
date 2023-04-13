@@ -217,8 +217,8 @@ fi
 
 ####Create cron for cacti user
 
-touch /etc/cron.d/$user
-echo "*/5 * * * * $user php $location/cacti/poller.php > /dev/null 2>&1" > /etc/cron.d/$user 
+touch /etc/cron.d/cacti
+echo "*/5 * * * * www-data php $location/cacti/poller.php > /dev/null 2>&1" > /etc/cron.d/cacti
 
 echo "restarting Mysqldb and Apache server for service refresh"
 systemctl restart mysql
