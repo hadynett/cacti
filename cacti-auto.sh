@@ -40,7 +40,7 @@ chmod 777 configure
 ./configure
 make
 make install
-chown root:root /usr/local/spine/bin/spine
+chown www-data:www-data /usr/local/spine/bin/spine
 chmod +s /usr/local/spine/bin/spine
 cd ..
 else
@@ -53,8 +53,8 @@ echo "Enter your PHP time zone i.e America/Toronto  Default is US/Central "
 read timezone
 if [ $timezone = "" ] 
 then
-echo "date.timezone =" US/Central  >> /etc/php/$php_version/cli/php.ini 
-echo "date.timezone =" US/Central >> /etc/php/$php_version/apache2/php.ini
+echo "date.timezone =" Asia/Jakarta  >> /etc/php/$php_version/cli/php.ini 
+echo "date.timezone =" Asia/Jakarta >> /etc/php/$php_version/apache2/php.ini
 else
 echo "date.timezone =" $timezone >> /etc/php/$php_version/cli/php.ini 
 echo "date.timezone =" $timezone >> /etc/php/$php_version/apache2/php.ini
