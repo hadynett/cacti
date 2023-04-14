@@ -53,8 +53,8 @@ echo "Enter your PHP time zone i.e America/Toronto  Default is US/Central "
 read timezone
 if [ $timezone = "" ] 
 then
-echo "date.timezone =" Asia/Jakarta  >> /etc/php/$php_version/cli/php.ini 
-echo "date.timezone =" Asia/Jakarta >> /etc/php/$php_version/apache2/php.ini
+echo "date.timezone =" America/Toronto  >> /etc/php/$php_version/cli/php.ini 
+echo "date.timezone =" America/Toronto >> /etc/php/$php_version/apache2/php.ini
 else
 echo "date.timezone =" $timezone >> /etc/php/$php_version/cli/php.ini 
 echo "date.timezone =" $timezone >> /etc/php/$php_version/apache2/php.ini
@@ -83,8 +83,8 @@ chown -R $user:$user $location/cacti
 ###Create cron entry for new user 
 fi
 ##Create  cron entry 
-touch /etc/cron.d/$user
-echo "*/5 * * * * $user php $location/cacti/poller.php > /dev/null 2>&1" > /etc/cron.d/$user 
+touch /etc/cron.d/cacti
+echo "*/5 * * * * $user php $location/cacti/poller.php > /dev/null 2>&1" > /etc/cron.d/cacti 
 #assign permissions for cacti installation to www-data user
 chown -R www-data:www-data $location/cacti/resource/snmp_queries/          
 chown -R www-data:www-data $location/cacti/resource/script_server/
