@@ -96,7 +96,7 @@ chown -R www-data:www-data $location/cacti/cache/realtime/
 chown -R www-data:www-data $location/cacti/cache/spikekill/
 touch $location/cacti/log/cacti.log
 chmod 664 $location/cacti/log/cacti.log
-chown -R www-data:www-data  $location/cacti/log/
+chown -R $user:$user  $location/cacti/log/
 cp $location/cacti/include/config.php.dist $location/cacti/include/config.php
 ##Adding Maria DB conf  
 echo "innodb_flush_log_at_timeout = 4" >>  /etc/mysql/mariadb.conf.d/50-server.cnf
